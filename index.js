@@ -1,23 +1,24 @@
-var btn = document.getElementsByClassName("plus");
-var check = document.getElementsByClassName("check");
+var btn        = document.getElementsByClassName("plus");
+var check      = document.getElementsByClassName("check");
 var delete_elm = document.getElementsByClassName("delete");
-var like_elm = document.getElementsByClassName("like");
+var like_elm   = document.getElementsByClassName("like");
+
 for (var i = 0; i < btn.length; i++) {
   btn[i].addEventListener('click',function (event) {
     // console.log(event)
    const btn_plus = event.target;
-   const div_el = btn_plus.parentElement;
-   const val_tag = div_el.querySelector('p');
-   var quan_val = Number(val_tag.innerHTML);
+   const div_el   = btn_plus.parentElement;
+   const val_tag  = div_el.querySelector('p');
+   var quan_val   = Number(val_tag.innerHTML);
    quan_val ++;
    val_tag.innerHTML = quan_val;
-   const tr_el=div_el.parentElement.parentElement;
+   const tr_el = div_el.parentElement.parentElement;
 //    console.log(tr_el)
-   const price_un = Number(tr_el.querySelector(".unitprice").innerHTML);
+   const price_un  = Number(tr_el.querySelector(".unitprice").innerHTML);
    const price_tag = tr_el.querySelector('.price');
 //    console.log(price_tag)
    var price_value = Number(price_tag.innerHTML);
-    price_value = quan_val * price_un;
+   price_value = quan_val * price_un;
    // console.log(price_value)
    price_tag.innerHTML = price_value;
 // //    console.log(price_un)
